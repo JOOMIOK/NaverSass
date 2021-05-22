@@ -1,0 +1,13 @@
+$rootUnit: 16px !default;
+
+@function removeUnit($value){
+    @return ($value / ($value * 0 + 1));
+ } //단위삭제
+
+@function rem($value, $base:$rootUnit){
+    @return removeUnit($value / $base) * 1rem;
+}  //px을 rem 으로 변경
+
+@function em($value, $base:$rootUnit){
+    @return removeUnit($value / $base) * 1em;
+}  // px를  em 으로 변경
