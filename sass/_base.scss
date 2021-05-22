@@ -1,14 +1,21 @@
+body *, body *::before, body *::after{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    box-sizing: border-box;
+}
+
+//반응형 이미지
+img{
+    max-width: 100%;
+    height: auto;
+}
+
 body{
     font-family: 'Spoqa Han Sans', sans-serif;
     font-weight: 400;
     font-size: rem(16px);
+    background-color: $default;
+    color: $text;
 }
-//테스트코드
-.container{
-    @include boxFixed;
-    background-color: yellow;
-}
-.header{
-    background-color: pink;
-    @include flexbox;
- }

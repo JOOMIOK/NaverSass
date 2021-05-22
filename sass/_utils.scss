@@ -52,7 +52,6 @@ $breakpoint: 768px;
         @content;
     }    
 }
-
 @mixin flexbox($direction: row, $justify: flex-start, $align: stretch, $wrap: nowrap) {
     display: flex;
     flex-direction: $direction;
