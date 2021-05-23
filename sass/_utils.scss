@@ -59,3 +59,15 @@ $breakpoint: 768px;
     align-items: $align;
     flex-wrap: $wrap;
 }
+
+@mixin a11y{                 //화면에는 보이지 않으나 스크린리더는 읽음
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    visibility: hidden;
+    clip: (0,0,0,0);
+    clip-path: inset(50%); 
+}
+
