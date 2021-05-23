@@ -39,7 +39,11 @@
         @include a11y;
     }
     
+    &__container{
+        @include flexbox(column); 
+    }
 }
+
 //아이디 및 비밀번호 입력서식
 .userEmail, .userPassword{
     margin-bottom: em(10px);
@@ -71,5 +75,62 @@
     display: none;
 }
 .is--invalid .errorMessage{
-    display: block;
+    display: block;   
+}
+
+//로그인 상태유지 및 아이피 보안
+.userSelectInfo{
+    order: 1;
+    @include flexbox;    //로그인상태ip보안 가로로 정렬
+}
+
+//IP 보안 링크
+.ipSecurityLink{
+    margin-left: auto;
+    text-decoration: none;
+    color: inherit;
+}
+
+// IP 보안  체크박스
+.ipSecurity{
+    //체크박스 input
+    &Checkbox{
+     position: absolute;  //absolute 화면에서 영역차지 않음
+     width: 1px;
+     height: 1px;
+     opacity: 0;
+    }
+    //체크박스 label
+    &Label::before{
+        content:"OFF";
+        font-weight:700;
+        display: inline-block;
+        width: em(36px) ;
+        padding: 0 em(4px);
+        margin-left: em(8px);
+        color: $secondary;       
+        cursor: pointer;
+    }
+    &Checkbox:checked + &Label::before{
+        content:"ON";
+        color: $primary;
+    }
+    &Checkbox:focus + &Label::before{
+        box-shadow: 0 0 0 2px $outline;
+        border-radius: 2px;
+    }
+}
+
+//로그인 버튼
+.loginButton{
+    margin: em(10px) 0; 
+    background-color: $primary;
+    color: $default;
+
+    .formControl__button{
+        background-color: inherit;
+        color: inherit;
+        width: 100%;
+        padding: em(19px) em(16px);
+    }
 }
