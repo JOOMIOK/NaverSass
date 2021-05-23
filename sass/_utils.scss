@@ -71,3 +71,7 @@ $breakpoint: 768px;
     clip-path: inset(50%); 
 }
 
+@mixin customOutline {         //  마우스에서는 아웃라인 생기지 않으나 키보드에서는 아웃라인 생성
+    box-shadow: 0 0 0 2px $outline;
+    border-radius: 2px;
+}
